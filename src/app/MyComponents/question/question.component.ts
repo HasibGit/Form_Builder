@@ -11,11 +11,14 @@ import { Question } from 'src/app/Question'
 export class QuestionComponent implements OnInit {
 
   questionPaper: QuestionPaper;
+  quesNo:number;
 
   constructor(private shared: SharedService) { }
 
   ngOnInit(): void {
     this.questionPaper = this.shared.getQuestion();
+    console.log(this.questionPaper);
+
   }
 
 }

@@ -16,7 +16,7 @@ export class QuestionsComponent implements OnInit {
   questionPapers: QuestionPaper[] = [
     {
       subject: "Math",
-      desc: "hard",
+      desc: "Full Marks: 60",
       questions: [
         {
           question: "what is ai",
@@ -47,7 +47,7 @@ export class QuestionsComponent implements OnInit {
 
     {
       subject: "Physics",
-      desc: "hard",
+      desc: "Full Marks: 60",
       questions: [
         {
           question: "what is ai",
@@ -78,7 +78,7 @@ export class QuestionsComponent implements OnInit {
 
     {
       subject: "Chemistry",
-      desc: "hard",
+      desc: "Full Marks: 60",
       questions: [
         {
           question: "what is ai",
@@ -109,7 +109,7 @@ export class QuestionsComponent implements OnInit {
 
     {
       subject: "Biology",
-      desc: "hard",
+      desc: "Full Marks: 60",
       questions: [
         {
           question: "what is ai",
