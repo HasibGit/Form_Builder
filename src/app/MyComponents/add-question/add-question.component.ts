@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FormArray, FormControl, Validators } from '@angular/forms';
+import { Question } from 'src/app/Question';
+import { QuestionPaper } from 'src/app/QuestionPaper';
 
 @Component({
   selector: 'app-add-question',
@@ -14,6 +16,12 @@ export class AddQuestionComponent implements OnInit {
 
   optionsArray = new FormArray([new FormControl('', Validators.required)]);
 
+  questions: Question[] = [];
+
+  question: string;
+
+  newQuestion: Question = new Question();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -25,6 +33,12 @@ export class AddQuestionComponent implements OnInit {
 
   removeInputControl(idx: number) {
     this.optionsArray.removeAt(idx);
+  }
+
+  onSubmit() {
+    this.newQuestion.question = this.question;
+    this.newQuestion.options = this.optionsArray.value;
+    console.log(this.newQuestion);
   }
 
 }
