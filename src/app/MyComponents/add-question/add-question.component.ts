@@ -23,4 +23,8 @@ export class AddQuestionComponent implements OnInit {
     this.optionsArray.push(new FormControl('', Validators.required));
   }
 
+  removeInputControl(idx: number) {
+    this.optionsArray.removeAt(idx);
+  }
+
 }
