@@ -16,6 +16,13 @@
 </nav>
 
 <div class="container">
-    <h3>Questions</h3>
-    
+
+    <h1>Forms</h1>
+    <p>Create and manage forms</p>
+
+    <ul class="list-group" *ngFor="let questionPaper of questionPapers">
+        <a class="text-uppercase text-decoration-none" routerLink="/question">
+            <li class="list-group-item" (click)="onClick(questionPaper)">{{questionPaper.subject}}</li>
+        </a>
+    </ul>
 </div>
