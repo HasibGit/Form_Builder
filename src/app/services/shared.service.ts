@@ -10,6 +10,7 @@ export class SharedService {
   constructor() { }
 
   sendQuestion(question: QuestionPaper) {
+    
     this.questionPaper = question;
     if (localStorage.getItem('testObject') == null) {
       localStorage.setItem('testObject', JSON.stringify(question));
@@ -17,6 +18,7 @@ export class SharedService {
 
     }
     else {
+      this.prev_ques = [];
       this.prev_ques.push(JSON.parse(localStorage.getItem('testObject') || 'null'));
       this.prev_ques.push(question);
       localStorage.setItem('testObject', JSON.stringify(this.prev_ques));
