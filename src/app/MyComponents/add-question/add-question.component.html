@@ -76,10 +76,10 @@
                             <input type="text" class="form-control mb-2" [formControl]="option"
                                 placeholder="add option">
 
-                            <button class="btn btn-danger rounded btn-sm mt-2 me-2" (click)="removeInputControl(idx)"
-                                *ngIf="optionsArray.length > 1">-</button>
+                            <button class="btn btn-danger rounded btn-sm mt-2 me-2 mb-2"
+                                (click)="removeInputControl(idx)" *ngIf="optionsArray.length > 1">-</button>
 
-                            <button class="btn btn-primary rounded btn-sm mt-2" *ngIf="isLast"
+                            <button class="btn btn-primary rounded btn-sm mt-2 mb-2" *ngIf="isLast"
                                 (click)="addInputControl()">+</button>
 
 

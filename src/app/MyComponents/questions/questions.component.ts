@@ -13,7 +13,22 @@ export class QuestionsComponent implements OnInit {
 
   @Output() passQuestionPaper: EventEmitter<QuestionPaper> = new EventEmitter();
 
-  questionPapers: QuestionPaper[] = [];
+  questionPapers: QuestionPaper[] = [
+    {
+      subject: "Math",
+      desc: "stuff",
+      questions: [
+        {
+          question: "Who knows",
+          options: [
+            "option 1",
+            "option 2",
+            "option 3"
+          ]
+        }
+      ]
+    }
+  ];
 
 
   constructor(private shared: SharedService) {
@@ -21,6 +36,8 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.questionPapers.push(this.shared.getQuestion());
+    console.log(this.questionPapers);
+
   }
 
   onClick(questionPaper: QuestionPaper) {

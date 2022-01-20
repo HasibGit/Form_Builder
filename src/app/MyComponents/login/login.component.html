@@ -22,16 +22,19 @@
       <img style="opacity: 1; height: 100px; width: 100px" src="../assets/images/angular-logo.png" alt="">
 
       <h2 class="mb-4">Login</h2>
-      <form>
+      <form (ngSubmit)="onSubmit()">
         <div class="mb-4">
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Email*">
+            placeholder="Email*" name="email" [(ngModel)]="email">
+          <small class="text-success">Enter "hasib@gmail.com"</small>
         </div>
         <div class="mb-4">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password*">
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password*" name="password"
+            [(ngModel)]="password">
+          <small class="text-success">Enter "12345"</small>
         </div>
 
-        <button type="submit" class="btn btn-primary" routerLink="/questions">Login</button>
+        <button type="submit" class="btn btn-primary">Login</button>
       </form>
     </div>
   </div>

@@ -5,7 +5,7 @@ import { QuestionPaper } from '../QuestionPaper';
   providedIn: 'root'
 })
 export class SharedService {
-  questionPaper: QuestionPaper;
+  questionPaper: QuestionPaper = new QuestionPaper();
   constructor() { }
 
   sendQuestion(question: QuestionPaper) {
