@@ -36,7 +36,7 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.questionPapers.push(this.shared.getQuestion());
-    console.log(this.questionPapers);
+   // console.log(this.questionPapers);
 
   }
 

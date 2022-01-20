@@ -11,16 +11,21 @@ export class SharedService {
 
   sendQuestion(question: QuestionPaper) {
     this.questionPaper = question;
-    if (this.prev_ques.length == 0) {
+    if (localStorage.getItem('testObject') == null) {
       localStorage.setItem('testObject', JSON.stringify(question));
-      this.prev_ques.push(question);
+      console.log(JSON.parse(localStorage.getItem('testObject') || 'null'));
+
     }
     else {
+      this.prev_ques.push(JSON.parse(localStorage.getItem('testObject') || 'null'));
       this.prev_ques.push(question);
       localStorage.setItem('testObject', JSON.stringify(this.prev_ques));
     }
 
-    console.log(localStorage.getItem('testObject'));
+
+    //console.log(JSON.parse(localStorage.getItem('testObject') || "null2"));
+
+
 
   }
 
