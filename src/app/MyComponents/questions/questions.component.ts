@@ -142,7 +142,7 @@ export class QuestionsComponent implements OnInit {
 
   constructor(private shared: SharedService) { }
   ngOnInit(): void {
-
+    this.questionPapers.push(this.shared.getQuestion());
   }
 
   onClick(questionPaper: QuestionPaper) {

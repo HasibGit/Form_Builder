@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FormArray, FormControl, Validators } from '@angular/forms';
 import { Question } from 'src/app/Question';
 import { QuestionPaper } from 'src/app/QuestionPaper';
+import { SharedService } from '../../services/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-question',
@@ -14,15 +16,20 @@ import { QuestionPaper } from 'src/app/QuestionPaper';
 
 export class AddQuestionComponent implements OnInit {
 
+  @Output() passQuestionPaper: EventEmitter<QuestionPaper> = new EventEmitter();
+
   optionsArray = new FormArray([new FormControl('', Validators.required)]);
 
   questions: Question[] = [];
 
+  subject: string;
+  desc: string;
   question: string;
 
   newQuestion: Question = new Question();
+  questionPaper: QuestionPaper = new QuestionPaper();
 
-  constructor() { }
+  constructor(private shared: SharedService, public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -38,7 +45,17 @@ export class AddQuestionComponent implements OnInit {
   onSubmit() {
     this.newQuestion.question = this.question;
     this.newQuestion.options = this.optionsArray.value;
-    console.log(this.newQuestion);
+    this.questions.push(this.newQuestion);
+    this.optionsArray = new FormArray([new FormControl('', Validators.required)]);
+  }
+
+  onSubmit2() {
+    this.questionPaper.subject = this.subject;
+    this.questionPaper.desc = this.desc;
+    this.questionPaper.questions = this.questions;
+    this.shared.sendQuestion(this.questionPaper);
+
+    this.router.navigate(['questions']);
   }
 
 }
