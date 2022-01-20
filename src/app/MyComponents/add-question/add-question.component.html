@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex border-bottom border-2">
     <div class="container justify-content-end">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="">
             <img src="../../../assets/images/angular-logo.png" alt="" width="30" height="30"
                 class="d-inline-block align-text-top">
             Question Builder
@@ -19,15 +19,56 @@
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
             <h2 class="offcanvas-title" id="offcanvasExampleLabel">Question Builder</h2>
+
+            <div class="dropdown me-auto ms-2">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item">My Account</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            href="#">About</a></li>
+                    <li><a class="dropdown-item">Logout</a></li>
+                </ul>
+            </div>
+
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div class="rounded-pill bg-primary text-white d-flex justify-content-center align-items-center">
+            <div class="rounded-pill bg-primary text-white d-flex justify-content-center align-items-center mb-3">
                 <h2 class="m-0">Questions</h2>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container d-flex flex-column justify-content-center align-items-center">
+                    <div class="first mb-5">
+                        <h3 class="m-0 text-center">Question Builder v1.0</h3>
+                    </div>
+
+                    <div class="second">
+                        <p>Copyright © 2022 by MD. Hasib Ullah. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
+
+
 
 <!-- Navbar End  -->
 
@@ -90,7 +131,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-info mb-2">ADD QUESTION</button> <br>
+                <button type="submit" class="btn btn-outline-primary mb-2">ADD QUESTION</button> <br>
             </form>
         </div>
 
