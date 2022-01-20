@@ -1,23 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container d-flex">
+<!-- Navbar Start  -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
+    <div class="container justify-content-end">
         <a class="navbar-brand" href="#">
             <img src="../../../assets/images/angular-logo.png" alt="" width="30" height="30"
                 class="d-inline-block align-text-top">
             Question Builder
         </a>
-        <button class="navbar-toggler mb-3" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
     </div>
 </nav>
+
+<div class="container mt-3 mb-3">
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample">
+        <img width="20" height="20" src="../../../assets/images/menu-icon.png" alt="">
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasExampleLabel">Question Builder</h2>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="rounded-pill bg-primary text-white d-flex justify-content-center align-items-center">
+                <h2 class="m-0">Questions</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navbar End  -->
+
 
 <div class="container">
 
