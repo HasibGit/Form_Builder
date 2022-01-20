@@ -1,6 +1,6 @@
 <!-- Navbar Start  -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex border-bottom border-2">
     <div class="container justify-content-end">
         <a class="navbar-brand" href="#">
             <img src="../../../assets/images/angular-logo.png" alt="" width="30" height="30"
@@ -11,9 +11,9 @@
 </nav>
 
 <div class="container mt-3 mb-3">
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
         aria-controls="offcanvasExample">
-        <img width="20" height="20" src="../../../assets/images/menu-icon.png" alt="">
+        <img width="15" height="15" src="../../../assets/images/menu-icon.png" alt="">
     </button>
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -38,9 +38,19 @@
 
     <div class="d-flex mb-3">
         <p>Create and manage question papers</p>
-        <button routerLink="/add-question" class="btn btn-sm btn-success ms-auto">ADD</button>
+        <button routerLink="/add-question" class="btn btn-success ms-auto">ADD</button>
     </div>
 
+    <div class="d-flex mb-3">
+        <div class="input-group w-25 mb-3">
+            <input type="text" class="form-control" placeholder="Search Question Paper"
+                aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">Search</button>
+            </div>
+        </div>
+
+    </div>
 
     <ul class="list-group" *ngFor="let questionPaper of questionPapers">
         <a class="text-uppercase text-decoration-none" routerLink="/question">
