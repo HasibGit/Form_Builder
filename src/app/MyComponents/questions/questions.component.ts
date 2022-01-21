@@ -18,22 +18,7 @@ export class QuestionsComponent implements OnInit {
 
   @Output() passQuestionPaper: EventEmitter<QuestionPaper> = new EventEmitter();
 
-  questionPapers: QuestionPaper[] = [
-    {
-      subject: "Math",
-      desc: "stuff",
-      questions: [
-        {
-          question: "Who knows",
-          options: [
-            "option 1",
-            "option 2",
-            "option 3"
-          ]
-        }
-      ]
-    }
-  ];
+  questionPapers: QuestionPaper[] = [];
 
 
   constructor(private shared: SharedService) {
@@ -41,7 +26,7 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.str = "" + localStorage.getItem('testObject');
+    this.str = "" + localStorage.getItem('QUESTIONS');
 
     this.strArray = [];
 

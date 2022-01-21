@@ -26,7 +26,7 @@ export class AddQuestionComponent implements OnInit {
   desc: string;
   question: string;
 
-  newQuestion: Question = new Question();
+  newQuestion: Question;
   questionPaper: QuestionPaper = new QuestionPaper();
 
   constructor(private shared: SharedService, public router: Router) { }
@@ -43,9 +43,14 @@ export class AddQuestionComponent implements OnInit {
   }
 
   onSubmit() {
+    this.newQuestion = new Question();
     this.newQuestion.question = this.question;
     this.newQuestion.options = this.optionsArray.value;
     this.questions.push(this.newQuestion);
+    console.log("printing added questions");
+    console.log(this.questions);
+
+
     this.optionsArray = new FormArray([new FormControl('', Validators.required)]);
   }
 
@@ -53,6 +58,8 @@ export class AddQuestionComponent implements OnInit {
     this.questionPaper.subject = this.subject;
     this.questionPaper.desc = this.desc;
     this.questionPaper.questions = this.questions;
+    //console.log("Added question");
+    //console.log(this.questionPaper);
     this.shared.sendQuestion(this.questionPaper);
 
     this.router.navigate(['questions']);

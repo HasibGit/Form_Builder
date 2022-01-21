@@ -16,7 +16,7 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.questionPaper = this.shared.getQuestion();
-    //console.log(this.questionPaper);
+    console.log(this.questionPaper);
 
   }
 
