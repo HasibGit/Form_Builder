@@ -1,4 +1,4 @@
-li:hover{
+.list-group-item:hover{
     background-color: #F0ECE3;
 }
 
