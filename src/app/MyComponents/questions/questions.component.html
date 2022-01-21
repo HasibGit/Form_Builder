@@ -108,6 +108,8 @@
         </div>
     </div>
 
+    <h3 class="fw-bold">Question Papers</h3>
+
     <ul class="list-group" *ngFor="let questionPaper of questionPapers">
         <a class="text-uppercase text-decoration-none" routerLink="/question">
             <li class="list-group-item" (click)="onClick(questionPaper)">{{questionPaper.subject}}</li>
