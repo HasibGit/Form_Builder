@@ -10,6 +10,11 @@ import { QuestionPaper } from '../../QuestionPaper';
 })
 export class QuestionsComponent implements OnInit {
 
+  test: QuestionPaper = new QuestionPaper();
+  str: string;
+  strArray: string[];
+
+  idx: number;
 
   @Output() passQuestionPaper: EventEmitter<QuestionPaper> = new EventEmitter();
 
@@ -35,13 +40,40 @@ export class QuestionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.questionPapers.push(this.shared.getQuestion());
-   // console.log(this.questionPapers);
+
+    this.str = "" + localStorage.getItem('testObject');
+
+    this.strArray = [];
+
+    this.strArray = this.str.split('-');
+
+    //console.log(this.strArray.length + "######" + this.str);
+
+    for (this.idx = 0; this.idx < this.strArray.length; this.idx++) {
+      this.test = JSON.parse(this.strArray[this.idx]);
+      //console.log("testing " + this.idx + " " + "####" + this.test.subject);
+      this.questionPapers.push(this.test);
+    }
+
+
+
+
+
+
+    //this.questionPapers.push(this.shared.getQuestion());
+    // console.log(this.questionPapers);
+
+    // this.str = `{"subject":"Java","desc":"68","questions":[{"question":"viwenviowejv","options":["4","7"]}]}`;
+
+    // this.test = JSON.parse(this.str);
+    // console.log("Printing JSON ---- " + this.test.subject);
+    // console.log("Printing JSON ---- " + this.test.questions.length);
+    // console.log("Printing JSON ---- " + this.test.desc);
 
   }
 
   onClick(questionPaper: QuestionPaper) {
-    this.shared.sendQuestion(questionPaper);
+    this.shared.sendQuestion2(questionPaper);
   }
 
 }
